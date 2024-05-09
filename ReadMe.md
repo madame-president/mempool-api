@@ -1,4 +1,4 @@
-# mempool-Terminal: Verified Bitcoin wallet statements blazingly-fast
+# mempool API: Bitcoin data exported directly from the bitcoin network using Mempool
 
 This document provides an overview and usage guidelines for mempool-Terminal, a Python program designed to fetch and analyze transactions associated with a specific Bitcoin address. The program utilizes various functionalities including fetching transactions and their details, calculating net amounts sent or received, and logging Bitcoin prices at transaction times. It also allows downloading transaction data as an Excel file for offline analysis.
 
