@@ -4,10 +4,11 @@ import pandas as pd
 import sys
 from tabulate import tabulate
 from datetime import datetime, timezone
-from prevouts import search_prevouts
 from getData import get_transactions, get_price
+from prevouts import search_prevouts
 
-bitcoin_power = 10**8
+
+sats_to_btc = 10**8
 
 def main():
     user_address = input("Please enter a Bitcoin Address: ")
@@ -41,8 +42,8 @@ def main():
                 price_log.append({'block_time': server_time, 'price': price})
 
             if found_in_prevouts or found_in_outputs:
-                sent_amount = sum(prevout['value'] for prevout in prevouts if prevout.get('scriptpubkey_address') == user_address) / bitcoin_power
-                received_amount = sum(vout['value'] for vout in tx['vout'] if vout.get('scriptpubkey_address') == user_address) / bitcoin_power
+                sent_amount = sum(prevout['value'] for prevout in prevouts if prevout.get('scriptpubkey_address') == user_address) / sats_to_btc
+                received_amount = sum(vout['value'] for vout in tx['vout'] if vout.get('scriptpubkey_address') == user_address) / sats_to_btc
                     
             # Display data in table format
             table_data.append({
@@ -55,12 +56,12 @@ def main():
             })
 
             # Character limits
-            max_width = 64
-            for entry in table_data:
-                entry['Transaction ID'] = entry['Transaction ID'][:20] + '...'
-                for key in entry:
-                    if key!= 'Transaction ID':
-                        entry[key] = str(entry[key])[:max_width]
+            # max_width = 64
+            # for entry in table_data:
+                # entry['Transaction ID'] = entry['Transaction ID'][:24] + '...'
+                # for key in entry:
+                    # if key!= 'Transaction ID':
+                        # entry[key] = str(entry[key])[:max_width]
 
         # Convert list to dataframe
         table_df = pd.DataFrame(table_data)
