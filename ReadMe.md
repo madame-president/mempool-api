@@ -8,10 +8,10 @@ Thank you [Mempool.space](https://mempool.space) for building the robust APIs th
 
 ## Features
 
-- **Fetch Transactions:** Get all transactions for a given Bitcoin address.
-- **Table Display:** local user-friendly display.
+- **Fetch Transactions:** Get all transactions for a given Bitcoin address
+- **Table Display:** local user-friendly display
 - **Price Logging:** Log the Bitcoin price at the time of each transaction
-- **Export to Excel:** Coming Soon!
+- **Export to Excel:** generate a .xlsx file wallet report
 
 ## Dependencies
 
@@ -29,7 +29,7 @@ Other modules:
 
 ## Constants
 
-- `bitcoin_power`: Used to convert sats to Bitcoin (1 BTC = 10^8 Satoshi)
+- `sats_to_btc`: Used to convert sats to Bitcoin (1 BTC = 10^8 Satoshi)
 
 ## Usage
 
@@ -51,17 +51,5 @@ To use mempool-Terminal, there are two primary methods: running the Python scrip
    3. **Run the Script:** Once the dependencies are installed, you can run the script from the command line:
 
        ```
-       python run.py
+       python save_to_excel.py
        ```
-
-#### Option 2: Downloading the Executable App
-
-   1. **Download the App:** Visit the official website to download the executable app:
-
-       ```
-       https://mempool-terminal.com
-       ```
-
-   2. **Install the App:** Follow the installation instructions provided on the website or accompanying the downloaded file.
-
-   3. **Run the App:** Once installed, open the application to start analyzing Bitcoin transactions without requiring manual setup or Python dependencies.
