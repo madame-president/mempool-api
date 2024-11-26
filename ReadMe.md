@@ -1,17 +1,16 @@
-# "Mempool" Terminal: verified Bitcoin wallet statements blazingly-fast
+# "Mempool" terminal API: verified Bitcoin wallet statements blazingly-fast
 
-This document provides an overview and usage guidelines for Mempool Terminal.
+This document provides an overview and usage guidelines for Mempool terminal API.
 
 ## Acknowledgements
 
-Thank you [Mempool.space](https://mempool.space) for building the robust APIs that made this possible.
+Thank you [mempool.space](https://mempool.space) for building the robust APIs that made this possible.
 
 ## Features
 
 - **Fetch Transactions:** Get all transactions for a given Bitcoin address
 - **Table Display:** local user-friendly display
 - **Price Logging:** Log the Bitcoin price at the time of each transaction
-- **Export to Excel:** generate a .xlsx file wallet report
 
 ## Dependencies
 
@@ -20,7 +19,6 @@ Mempool Terminal relies on several Python Libraries:
 - `requests`: For making HTTP requests
 - `datetime`: For handling dates and times
 - `tabulate`: For easy table display
-- `openpyxl`: For reading and writing .xlsx files
 
 Other modules:
 
@@ -51,5 +49,5 @@ To use mempool-Terminal, there are two primary methods: running the Python scrip
    3. **Run the Script:** Once the dependencies are installed, you can run the script from the command line:
 
        ```
-       python save_to_excel.py
+       python run.py
        ```
